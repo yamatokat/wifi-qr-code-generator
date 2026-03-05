@@ -1,35 +1,54 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wi-Fi QRコードジェネレーター</title>
+    <title>Wi-Fi QR Code Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>Wi-Fi QRコードジェネレーター</h1>
+        <h1>Wi-Fi QR Code Generator</h1>
         <div class="form-group">
             <label for="ssid">SSID:</label>
-            <input type="text" id="ssid" placeholder="Wi-Fiネットワーク名">
+            <input type="text" id="ssid" placeholder="Wi-Fi Network Name">
         </div>
         <div class="form-group">
-            <label for="password">パスワード:</label>
-            <input type="password" id="password" placeholder="パスワード">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Password">
         </div>
         <div class="form-group">
-            <label for="encryption">暗号化方式:</label>
+            <label for="encryption">Encryption:</label>
             <select id="encryption">
                 <option value="WPA" selected>WPA/WPA2</option>
                 <option value="WEP">WEP</option>
-                <option value="nopass">パスワードなし</option>
+                <option value="nopass">No Password</option>
             </select>
         </div>
-        <button id="generate-btn">QRコードを生成</button>
+        <button id="generate-btn">Generate QR Code</button>
         <div id="qrcode"></div>
+        <button id="print-btn" class="hidden">Print</button>
     </div>
+
+    <div id="print-layout" class="hidden">
+        <div class="print-content">
+            <div class="header">
+                <h1>Guest Wi-Fi</h1>
+            </div>
+            <p class="instructions">Scan the QR code with your device's camera to connect.</p>
+            <div id="print-qrcode"></div>
+            <div class="wifi-details">
+                <p><strong>Network Name:</strong> <span id="print-ssid"></span></p>
+                <p><strong>Password:</strong> <span id="print-password"></span></p>
+            </div>
+            <div class="footer">
+                <p>Enjoy your stay</p>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script src="script.js"></script>
 </body>

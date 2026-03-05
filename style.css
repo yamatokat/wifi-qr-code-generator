@@ -63,3 +63,93 @@ button:hover {
     display: flex;
     justify-content: center;
 }
+
+.hidden {
+    display: none;
+}
+
+#print-btn {
+    margin-top: 1rem;
+}
+
+#print-layout {
+    font-family: 'Georgia', serif;
+    color: #333;
+    width: 8.5in;
+    height: 11in;
+    margin: auto;
+    padding: 1in;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9f9f9;
+}
+
+.print-content {
+    text-align: center;
+    border: 2px solid #d4af37;
+    padding: 1rem;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.print-content .header h1 {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #d4af37;
+    display: inline-block;
+}
+
+.print-content .instructions {
+    font-size: 1.2rem;
+    margin: 2rem 0;
+}
+
+#print-qrcode {
+    margin: 0 auto 2rem;
+}
+
+.wifi-details {
+    font-size: 1.2rem;
+}
+
+.wifi-details p {
+    margin: 0.5rem 0;
+}
+
+.print-content .footer {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: #777;
+}
+
+@media print {
+
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+    }
+
+    .container,
+    #print-btn {
+        display: none;
+    }
+
+    #print-layout {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        border: none;
+    }
+}
