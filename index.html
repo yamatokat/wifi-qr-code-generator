@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wi-Fi QRコードジェネレーター</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Wi-Fi QRコードジェネレーター</h1>
+        <div class="form-group">
+            <label for="ssid">SSID:</label>
+            <input type="text" id="ssid" placeholder="Wi-Fiネットワーク名">
+        </div>
+        <div class="form-group">
+            <label for="password">パスワード:</label>
+            <input type="password" id="password" placeholder="パスワード">
+        </div>
+        <div class="form-group">
+            <label for="encryption">暗号化方式:</label>
+            <select id="encryption">
+                <option value="WPA" selected>WPA/WPA2</option>
+                <option value="WEP">WEP</option>
+                <option value="nopass">パスワードなし</option>
+            </select>
+        </div>
+        <button id="generate-btn">QRコードを生成</button>
+        <div id="qrcode"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
